@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="protocols">
+        <item>OpenVPN UDP</item>
+        <item>OpenVPN TCP</item>
+        <item>IKEv2</item>
+        <item>WireGuard</item>
+    </string-array>
+    
+    <string-array name="servers">
+        <item>Econet Zimbabwe - Harare</item>
+        <item>Econet Zimbabwe - Bulawayo</item>
+        <item>NetOne Zimbabwe - Harare</item>
+        <item>NetOne Zimbabwe - Bulawayo</item>
+        <item>Econet Zimbabwe - Mutare</item>
+        <item>NetOne Zimbabwe - Gweru</item>
+        <item>Econet Zimbabwe - Masvingo</item>
+        <item>NetOne Zimbabwe - Chinhoyi</item>
+    </string-array>
+</resources>
