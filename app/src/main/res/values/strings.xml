@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Traxxion09 tunnel pro</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+    <string name="action_import_export">Import/Export</string>
+    
+    <!-- Splash Screen -->
+    <string name="loading_initializing">Initializing Traxxion09 Tunnel Pro...</string>
+    <string name="loading_connecting">Connecting to Zimbabwean servers...</string>
+    <string name="loading_servers">Loading Econet &amp; NetOne servers...</string>
+    <string name="loading_vpn">Preparing VPN service...</string>
+    <string name="loading_ready">Ready to launch!</string>
+    <string name="created_by">Created by LilGagaTraxx09</string>
+    
+    <!-- VPN Status -->
+    <string name="vpn_connected">Connected</string>
+    <string name="vpn_disconnected">Disconnected</string>
+    <string name="vpn_connecting">Connecting...</string>
+    <string name="vpn_disconnecting">Disconnecting...</string>
+    
+    <!-- Buttons -->
+    <string name="connect">CONNECT</string>
+    <string name="disconnect">DISCONNECT</string>
+    <string name="import_config">SELECT FILE TO IMPORT</string>
+    <string name="export_config">EXPORT CONFIGURATION</string>
+    
+    <!-- Server Information -->
+    <string name="server_econet_harare">Econet Zimbabwe - Harare</string>
+    <string name="server_econet_bulawayo">Econet Zimbabwe - Bulawayo</string>
+    <string name="server_netone_harare">NetOne Zimbabwe - Harare</string>
+    <string name="server_netone_bulawayo">NetOne Zimbabwe - Bulawayo</string>
+    <string name="server_econet_mutare">Econet Zimbabwe - Mutare</string>
+    <string name="server_netone_gweru">NetOne Zimbabwe - Gweru</string>
+    <string name="server_econet_masvingo">Econet Zimbabwe - Masvingo</string>
+    <string name="server_netone_chinhoyi">NetOne Zimbabwe - Chinhoyi</string>
+    
+    <!-- Settings -->
+    <string name="auto_connect">Auto-connect on startup</string>
+    <string name="auto_reconnect">Auto-reconnect on disconnect</string>
+    <string name="offline_mode">Enable offline mode</string>
+    <string name="enable_notifications">Enable notifications</string>
+    <string name="connection_timeout">Connection Timeout</string>
+    <string name="vpn_protocol">VPN Protocol</string>
+    
+    <!-- About -->
+    <string name="app_version">Version 1.0.0</string>
+    <string name="developer_info">Developer Information</string>
+    <string name="creator_name">Created by: Vincent Ganiza LilGagaTraxx09</string>
+    <string name="contact_info">Contact Information:</string>
+    <string name="contact_number1">Call: 263780078177</string>
+    <string name="contact_number2">Call: 263716857999</string>
+    <string name="about_app">About This App</string>
+    
+    <!-- Import/Export -->
+    <string name="import_title">Import Configuration</string>
+    <string name="export_title">Export Configuration</string>
+    <string name="import_description">Load VPN configuration from a file</string>
+    <string name="export_description">Save current VPN configuration to a file</string>
+    <string name="config_management">Configuration Management</string>
+    
+    <!-- Notifications -->
+    <string name="notification_title">Traxxion09 Tunnel Pro</string>
+    <string name="notification_connected">Connected to %1$s</string>
+    <string name="notification_disconnected">VPN Disconnected</string>
+    
+    <!-- Permissions -->
+    <string name="storage_permission_required">Storage permission required!</string>
+    <string name="vpn_permission_denied">VPN permission denied</string>
+    
+    <!-- Toast Messages -->
+    <string name="vpn_connected_toast">VPN Connected</string>
+    <string name="vpn_disconnected_toast">VPN Disconnected</string>
+    <string name="export_success">Configuration exported successfully!</string>
+    <string name="import_success">Configuration imported successfully!</string>
+    <string name="export_failed">Export failed!</string>
+    <string name="import_failed">Import failed!</string>
+    <string name="invalid_config">Invalid configuration file!</string>
+    
+</resources>
