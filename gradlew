@@ -166,3 +166,16 @@ APP_ARGS=`save "$@"`
 set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
 
 exec "$JAVACMD" "$@"
+
+# Simple Gradle wrapper for Traxxion09 tunnel pro
+echo "🔨 Building Traxxion09 tunnel pro..."
+
+# Check if we have gradle installed
+if command -v gradle >/dev/null 2>&1; then
+    gradle "$@"
+else
+    echo "Installing Gradle..."
+    sudo apt-get update
+    sudo apt-get install -y gradle
+    gradle "$@"
+fi
