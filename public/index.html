@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traxxion09 - Zimbabwe SIM Generation Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="logo-container">
+                <h1 class="loading-logo">Traxxion09</h1>
+                <div class="loading-spinner"></div>
+            </div>
+            <p class="loading-text">Loading Zimbabwe's Premier SIM Service...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="creator-text">Created by Lil Gaga Traxx09</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" style="display: none;">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Traxxion09</h2>
+                <span class="brand-subtitle">Zimbabwe SIM Service</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-link" onclick="showSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="#generate" class="nav-link" onclick="showSection('generate')">
+                    <i class="fas fa-plus-circle"></i> Generate SIM
+                </a>
+                <a href="#messages" class="nav-link" onclick="showSection('messages')">
+                    <i class="fas fa-comments"></i> Messages
+                </a>
+                <a href="#profile" class="nav-link" onclick="showSection('profile')">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Authentication Section -->
+    <div id="authSection" class="auth-section" style="display: none;">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Traxxion09</h1>
+                    <p>Zimbabwe's Premier SIM Generation Service</p>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form">
+                    <h2>Welcome Back</h2>
+                    <form onsubmit="login(event)">
+                        <div class="form-group">
+                            <input type="email" id="loginEmail" placeholder="Email Address" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="loginPassword" placeholder="Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="auth-btn">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                    </form>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <button class="google-btn" onclick="loginWithGoogle()">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    
+                    <p class="auth-switch">
+                        Don't have an account? 
+                        <a href="#" onclick="toggleAuthForm()">Sign Up</a>
+                    </p>
+                </div>
+
+                <!-- Register Form -->
+                <div id="registerForm" class="auth-form" style="display: none;">
+                    <h2>Create Account</h2>
+                    <form onsubmit="register(event)">
+                        <div class="form-group">
+                            <input type="text" id="registerName" placeholder="Full Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="registerEmail" placeholder="Email Address" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="registerPassword" placeholder="Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" class="auth-btn">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                    </form>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <button class="google-btn" onclick="loginWithGoogle()">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    
+                    <p class="auth-switch">
+                        Already have an account? 
+                        <a href="#" onclick="toggleAuthForm()">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Content -->
+    <div id="appContent" class="app-content" style="display: none;">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                <div class="user-info">
+                    <span id="userName">Welcome!</span>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-sim-card"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalSims">0</h3>
+                        <p>Total SIM Numbers</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalMessages">0</h3>
+                        <p>Messages Received</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="lastActivity">-</h3>
+                        <p>Last Activity</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-sims">
+                <h3>Recent SIM Numbers</h3>
+                <div id="recentSimsList" class="sims-list">
+                    <!-- Recent SIMs will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Generate SIM Section -->
+        <section id="generate" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-plus-circle"></i> Generate New SIM</h2>
+            </div>
+            
+            <div class="generate-container">
+                <div class="generate-card">
+                    <h3>Create Zimbabwe SIM Number</h3>
+                    <p>Generate unlimited SIM numbers starting with +26309</p>
+                    
+                    <div class="format-selection">
+                        <label>Select Format:</label>
+                        <div class="format-options">
+                            <label class="format-option">
+                                <input type="radio" name="format" value="+26309" checked>
+                                <span>+26309 (International)</span>
+                            </label>
+                            <label class="format-option">
+                                <input type="radio" name="format" value="26309">
+                                <span>26309 (Local)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="generate-btn" onclick="generateSIM()">
+                        <i class="fas fa-magic"></i> Generate SIM Number
+                    </button>
+                    
+                    <div id="generatedResult" class="generated-result" style="display: none;">
+                        <div class="result-card">
+                            <h4>New SIM Generated!</h4>
+                            <div class="sim-number" id="newSimNumber"></div>
+                            <div class="sim-actions">
+                                <button onclick="copySIM()" class="copy-btn">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                                <button onclick="showSimDetails()" class="details-btn">
+                                    <i class="fas fa-info"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section id="messages" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-comments"></i> Messages & Notifications</h2>
+            </div>
+            
+            <div class="messages-container">
+                <div class="sim-selector">
+                    <label>Select SIM Number:</label>
+                    <select id="messageSimSelect" onchange="loadMessages()">
+                        <option value="">Choose a SIM number...</option>
+                    </select>
+                </div>
+                
+                <div class="message-types">
+                    <button class="message-type-btn active" data-type="all" onclick="filterMessages('all')">
+                        <i class="fas fa-list"></i> All
+                    </button>
+                    <button class="message-type-btn" data-type="sms" onclick="filterMessages('sms')">
+                        <i class="fas fa-sms"></i> SMS
+                    </button>
+                    <button class="message-type-btn" data-type="whatsapp" onclick="filterMessages('whatsapp')">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="message-type-btn" data-type="call" onclick="filterMessages('call')">
+                        <i class="fas fa-phone"></i> Calls
+                    </button>
+                </div>
+                
+                <div id="messagesList" class="messages-list">
+                    <div class="no-messages">
+                        <i class="fas fa-inbox"></i>
+                        <p>Select a SIM number to view messages</p>
+                    </div>
+                </div>
+                
+                <div class="send-message-section">
+                    <h3>Send Message</h3>
+                    <form onsubmit="sendMessage(event)">
+                        <div class="form-row">
+                            <select id="sendFromSim" required>
+                                <option value="">From SIM...</option>
+                            </select>
+                            <input type="text" id="sendToNumber" placeholder="To Number" required>
+                        </div>
+                        <div class="form-row">
+                            <select id="messageType" required>
+                                <option value="sms">SMS</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="call">Call</option>
+                            </select>
+                        </div>
+                        <textarea id="messageContent" placeholder="Message content..." required></textarea>
+                        <button type="submit" class="send-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-user"></i> Profile</h2>
+            </div>
+            
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="profileName">User Name</h3>
+                        <p id="profileEmail">user@email.com</p>
+                        <p class="join-date">Member since: <span id="profileJoinDate">-</span></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Developer Contact</h3>
+                    <div class="contact-details">
+                        <p><strong>Developer:</strong> Vincent Ganiza (Lil Gaga Traxx09)</p>
+                        <p><strong>Mobile:</strong> 
+                            <a href="tel:+263780078177">+263 780 078 177</a> | 
+                            <a href="tel:+263716857999">+263 716 857 999</a>
+                        </p>
+                        <p><strong>Service:</strong> Zimbabwe SIM Generation</p>
+                        <p><strong>Created by:</strong> Lil Gaga Traxx09</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
