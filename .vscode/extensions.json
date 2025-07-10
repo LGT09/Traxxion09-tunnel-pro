@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-maven",
+        "vscjava.vscode-java-dependency",
+        "richardwillis.vscode-gradle",
+        "vscjava.vscode-gradle",
+        "mathiasfrohlich.kotlin",
+        "fwcd.kotlin",
+        "ms-vscode.vscode-json",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.remote-explorer",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode"
+    ],
+    "unwantedRecommendations": [
+        "ms-vscode.vscode-typescript"
+    ]
+}
