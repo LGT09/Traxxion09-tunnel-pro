@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.lilgagatraxx09.traxxion09tunnelpro'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.lilgagatraxx09.traxxion09tunnelpro"
         minSdk 21
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0.0"
 
