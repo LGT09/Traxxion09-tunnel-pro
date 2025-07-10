@@ -1,0 +1,68 @@
+{
+    "folders": [
+        {
+            "name": "Traxxion 09 tunnel VPN",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.debug.settings.enableRunDebugCodeLens": true,
+        "java.import.gradle.enabled": true,
+        "java.import.gradle.wrapper.enabled": true,
+        "gradle.nestedProjects": true,
+        "gradle.javaDebug": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "files.exclude": {
+            "**/build": true,
+            "**/.gradle": true,
+            "**/local.properties": true,
+            "**/*.iml": true,
+            "**/.idea": true
+        },
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+            "*.gradle": "${capture}.gradle.kts,gradle.properties",
+            "build.gradle": "gradle.properties,gradlew,gradlew.bat,gradle/wrapper/*",
+            "AndroidManifest.xml": "proguard-rules.pro"
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "vscode-java-pack",
+            "redhat.java",
+            "vscjava.vscode-gradle",
+            "mathiasfrohlich.kotlin",
+            "ms-vscode.vscode-json"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "🚀 Quick Build & Install",
+                "type": "shell",
+                "command": "./gradlew",
+                "args": [
+                    "clean",
+                    "assembleDebug",
+                    "installDebug"
+                ],
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                },
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "new"
+                }
+            }
+        ]
+    }
+}

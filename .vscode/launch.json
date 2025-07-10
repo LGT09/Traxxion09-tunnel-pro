@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "🚀 Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "🔍 Debug MainActivity",
+            "request": "launch",
+            "mainClass": "com.lilgagatraxx09.traxxion09tunnelpro.MainActivity",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "🔍 Debug SplashActivity",
+            "request": "launch",
+            "mainClass": "com.lilgagatraxx09.traxxion09tunnelpro.SplashActivity",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "🔍 Debug VpnService",
+            "request": "launch",
+            "mainClass": "com.lilgagatraxx09.traxxion09tunnelpro.VpnService",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "📱 Attach to Android Process",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5005,
+            "timeout": 30000,
+            "projectName": "app"
+        }
+    ]
+}

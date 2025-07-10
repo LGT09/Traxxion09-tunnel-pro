@@ -1,0 +1,48 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.enableRunDebugCodeLens": true,
+    "java.debug.settings.hotCodeReplace": "auto",
+    "java.inlayHints.parameterNames.enabled": "all",
+    "java.saveActions.organizeImports": true,
+    "java.format.settings.url": ".vscode/java-google-style.xml",
+    "java.import.gradle.enabled": true,
+    "java.import.gradle.wrapper.enabled": true,
+    "gradle.nestedProjects": true,
+    "gradle.javaDebug": true,
+    "files.exclude": {
+        "**/build": true,
+        "**/.gradle": true,
+        "**/local.properties": true,
+        "**/*.iml": true,
+        "**/.idea": true
+    },
+    "files.watcherExclude": {
+        "**/build/**": true,
+        "**/.gradle/**": true
+    },
+    "search.exclude": {
+        "**/build": true,
+        "**/.gradle": true,
+        "**/node_modules": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "xml.format.splitAttributes": true,
+    "xml.format.joinCDATALines": true,
+    "xml.format.joinContentLines": false,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "*.gradle": "${capture}.gradle.kts,gradle.properties",
+        "build.gradle": "gradle.properties,gradlew,gradlew.bat,gradle/wrapper/*",
+        "settings.gradle": "gradle.properties,gradlew,gradlew.bat,gradle/wrapper/*"
+    }
+}
