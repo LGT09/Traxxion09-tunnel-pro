@@ -1,0 +1,52 @@
+{
+	"name": "Traxxion 09 tunnel VPN - Android Development",
+	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "17",
+			"installMaven": "false",
+			"installGradle": "true"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "18"
+		},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"redhat.java",
+				"vscjava.vscode-gradle",
+				"mathiasfrohlich.kotlin",
+				"ms-vscode.vscode-json",
+				"formulahendry.auto-rename-tag",
+				"esbenp.prettier-vscode"
+			],
+			"settings": {
+				"java.configuration.updateBuildConfiguration": "automatic",
+				"java.import.gradle.enabled": true,
+				"java.import.gradle.wrapper.enabled": true,
+				"gradle.nestedProjects": true,
+				"editor.formatOnSave": true,
+				"files.exclude": {
+					"**/build": true,
+					"**/.gradle": true,
+					"**/local.properties": true
+				}
+			}
+		}
+	},
+	"forwardPorts": [8080, 3000],
+	"postCreateCommand": ".devcontainer/setup-android.sh",
+	"remoteUser": "codespace",
+	"containerEnv": {
+		"ANDROID_HOME": "/home/codespace/android-sdk",
+		"ANDROID_SDK_ROOT": "/home/codespace/android-sdk"
+	},
+	"mounts": [
+		"source=/tmp,target=/tmp,type=bind"
+	],
+	"runArgs": ["--privileged"]
+}

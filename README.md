@@ -7,6 +7,18 @@
 
 ## 🎯 Build Your VPN App
 
+### ☁️ GitHub Codespaces (Easiest - No Setup!)
+```bash
+# Open in your browser - zero setup required!
+# Click "Code" → "Codespaces" → "Create codespace"
+# Automatic Android SDK setup (2-3 minutes)
+
+# Build when ready:
+./codespaces-build.sh
+```
+- **Quick Start**: `CODESPACES_QUICK_START.md`
+- **Complete Guide**: `GITHUB_CODESPACES_GUIDE.md`
+
 ### 🖥️ Visual Studio Code (Recommended)
 ```bash
 # Open in VS Code
