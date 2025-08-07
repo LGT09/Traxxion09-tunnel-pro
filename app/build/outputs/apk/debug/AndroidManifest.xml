@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lilgagatraxx09.traxxion09tunnelpro">
-
-    <!-- VPN and Network permissions -->
+    
     <uses-permission android:name="android.permission.BIND_VPN_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,11 +11,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    
-    <!-- Required for VPN -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    
-    <!-- Additional permissions for diagnostic tools -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -28,7 +23,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <!-- Splash Screen Activity -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -39,31 +33,26 @@
             </intent-filter>
         </activity>
 
-        <!-- Main VPN Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- Import/Export Activity -->
         <activity
             android:name=".ImportExportActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- Settings Activity -->
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- About Activity -->
         <activity
             android:name=".AboutActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- VPN Service -->
         <service
             android:name=".VpnService"
             android:exported="false"

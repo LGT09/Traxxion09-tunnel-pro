@@ -1,0 +1,25 @@
+# Traxxion09 Tunnel PRO VPN - Local Properties Template
+# Created by Vincent Ganiza (Lil Gaga Traxx09)
+# 
+# Copy this file to local.properties and update the paths for your environment
+# This file should not be committed to version control
+
+# Android SDK location
+# Update this path to match your Android SDK installation
+sdk.dir=/path/to/your/Android/Sdk
+
+# Android NDK location (optional)
+# ndk.dir=/path/to/your/Android/Sdk/ndk
+
+# Build configuration
+# Uncomment and modify these settings as needed
+# org.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8
+# android.useAndroidX=true
+# android.enableJetifier=true
+
+# App specific settings
+app.name=Traxxion09 Tunnel PRO
+app.developer=Vincent Ganiza (Lil Gaga Traxx09)
+app.contact.email=vincentganiza9@gmail.com
+app.contact.phone=+263780078177 | +263716857999
+app.location=Zimbabwe 🇿🇼

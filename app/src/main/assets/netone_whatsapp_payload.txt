@@ -1,0 +1,27 @@
+# NetOne WhatsApp Payload Configuration
+# Created by Vincent Ganiza (Lil Gaga Traxx09)
+# For Traxxion09 Tunnel PRO VPN
+
+[CONFIG]
+PROTOCOL=SSH
+SERVER=netone-whatsapp.zw
+PORT=22
+USERNAME=netone_user
+PASSWORD=netone_pass_2024
+METHOD=chacha20-ietf-poly1305
+
+[PAYLOAD]
+CONNECT [host_port] HTTP/1.1[crlf]Host: web.whatsapp.com[crlf]Connection: Keep-Alive[crlf]Proxy-Connection: Keep-Alive[crlf]User-Agent: Mozilla/5.0 (Linux; Android 11; SM-G998B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Mobile Safari/537.36[crlf][crlf]
+
+[SETTINGS]
+KEEP_ALIVE=true
+TIMEOUT=45
+RETRY=5
+BUFFER_SIZE=16384
+COMPRESSION=true
+
+[DESCRIPTION]
+NetOne WhatsApp Payload
+Optimized for WhatsApp Web and mobile access
+Zimbabwe server configuration
+Enhanced for slow network conditions

@@ -1,0 +1,4 @@
+# This is a placeholder for the gradle-wrapper.jar file
+# In a real environment, this would be a binary JAR file
+# For AIDE compatibility, this placeholder allows the project to be recognized
+# The actual JAR file will be downloaded by AIDE when needed
