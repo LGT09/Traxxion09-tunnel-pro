@@ -1,2 +1,32 @@
-include ':app'
+// Traxxion09 Tunnel PRO VPN - Project Settings
+// Created by Vincent Ganiza (Lil Gaga Traxx09)
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // For legacy dependencies
+    }
+}
+
 rootProject.name = "Traxxion09TunnelPro"
+
+include ':app'
+
+// Project metadata
+gradle.ext.appName = "Traxxion09 Tunnel PRO"
+gradle.ext.developerName = "Vincent Ganiza (Lil Gaga Traxx09)"
+gradle.ext.contactEmail = "vincentganiza9@gmail.com"
+gradle.ext.contactPhone = "+263780078177 | +263716857999"
+gradle.ext.location = "Zimbabwe 🇿🇼"
+gradle.ext.versionCode = 1
+gradle.ext.versionName = "1.0.0"

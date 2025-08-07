@@ -1,8 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Traxxion09 Tunnel PRO VPN - Created by Vincent Ganiza (Lil Gaga Traxx09)
+
 buildscript {
     repositories {
         google()
         mavenCentral()
+        jcenter() // For legacy dependencies
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.4.2'
@@ -16,9 +19,24 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter() // For legacy dependencies
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+// Project metadata
+ext {
+    appName = "Traxxion09 Tunnel PRO"
+    developerName = "Vincent Ganiza (Lil Gaga Traxx09)"
+    contactEmail = "vincentganiza9@gmail.com"
+    contactPhone = "+263780078177 | +263716857999"
+    location = "Zimbabwe 🇿🇼"
+    versionCode = 1
+    versionName = "1.0.0"
+    minSdkVersion = 21
+    targetSdkVersion = 33
+    compileSdkVersion = 33
 }
