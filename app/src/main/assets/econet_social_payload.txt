@@ -1,0 +1,27 @@
+# Econet Social Payload Configuration
+# Created by Vincent Ganiza (Lil Gaga Traxx09)
+# For Traxxion09 Tunnel PRO VPN
+
+[CONFIG]
+PROTOCOL=V2RAY
+SERVER=econet-social.zw
+PORT=443
+UUID=12345678-1234-1234-1234-123456789012
+SECURITY=tls
+NETWORK=tcp
+HOST=www.facebook.com
+PATH=/ws
+
+[PAYLOAD]
+GET / HTTP/1.1[crlf]Host: www.facebook.com[crlf]Connection: Keep-Alive[crlf]Proxy-Connection: Keep-Alive[crlf]User-Agent: Mozilla/5.0 (Linux; Android 10; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36[crlf][crlf]
+
+[SETTINGS]
+KEEP_ALIVE=true
+TIMEOUT=30
+RETRY=3
+BUFFER_SIZE=8192
+
+[DESCRIPTION]
+Econet Social Media Payload
+Optimized for Facebook, WhatsApp, Instagram access
+Zimbabwe server configuration

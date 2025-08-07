@@ -1,0 +1,26 @@
+Traxxion09 Tunnel PRO VPN
+Version: 1.0.0
+Developer: Vincent Ganiza (Lil Gaga Traxx09)
+Contact: vincentganiza9@gmail.com
+Phone: +263780078177 | +263716857999
+Location: Zimbabwe 🇿🇼
+
+Features:
+- Offline VPN Launch
+- 10-second Splash Screen
+- Zimbabwe Servers (Econet, NetOne)
+- V2Ray, SSH, TCP, UDP, SlowDNS support
+- Smart Config Import/Export
+- Theme Modes (Dark, Light, System)
+- Kill Switch
+- Diagnostic Tools
+- IP Checker
+- SIM Card Information
+- Host Key Viewer
+- HWID Display
+
+Payload Configurations:
+- econet_social_payload.txt
+- netone_whatsapp_payload.txt
+
+"Gaga is the King" - Vincent Ganiza (Lil Gaga Traxx09)
